@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="fragments/headelements :: headElements"></head>
+  <title>SpringBootFileUploadDemo - Manage Files</title>
+</head>
+<body>
+  <div th:replace="fragments/header :: header"></div>
+  <main>
+    <section class="mainContent">
+      <h1>Manage Files</h1>
+      <hr>
+      <section class="message" th:if="${message}">
+        <p class="para" th:text="${message}"></p>
+      </section>
+      <section class="filesmgmtpane">
+        <form method="post" enctype="multipart/form-data" th:action="@{/fileuploaddemo/managefiles}">
+          <div class="form-control">
+            <label>Select File to upload:</label>
+          </div>
+          <div class="form-control">
+            <input type="file" name="file" required>
+          </div>
+          <div class="form-control">
+            <button class="submit-button" type="submit">Upload File</button>
+          </div>
+        </form>
+      </section>
+      <section class="filesList">
+        <table>
+          <caption>List of Files</caption>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Files</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="file, counter : ${files}">
+              <th scope="row" th:text="${counter.count}+${'.'}"></th>
+              <td><a th:href="${file}" th:text="${file}"></a></td>
+            </tr>
+            <tr th:if="${files.size() == 0}">
+              <td colspan="2" th:align="center">No uploaded files found</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

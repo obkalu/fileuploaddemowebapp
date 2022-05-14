@@ -1,0 +1,19 @@
+<header th:fragment="header" xmlns:th="http://www.thymeleaf.org">
+    <section class="logo-container">
+        <h2 class="logo">
+            <a th:href="@{/fileuploaddemo/home}">SpringBoot FileUpload Demo</a></h2>
+    </section>
+    <nav>
+        <ul class="nav-links">
+            <li>
+                <a href="#" class="nav-link">About</a>
+            </li>
+            <li>
+                <a th:href="@{/fileuploaddemo/managefiles}" class="nav-link">Manage Files</a>
+            </li>
+        </ul>
+    </nav>
+    <section class="cart">
+        <h2 class="class">ShopCart</h2>
+    </section>
+</header>
