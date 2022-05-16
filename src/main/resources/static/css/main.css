@@ -95,3 +95,23 @@ table th, table td {
     vertical-align: middle;
     padding-left: 0.5em;
 }
+footer {
+    background-color: #dddcdc;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 8vh;
+    align-items: center;
+}
+section.left-footer-content {
+    flex: 1;
+    justify-content: left;
+    margin: 0em 1em 0em 1em;
+}
+section.right-footer-content {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    margin: 0em 1em 0em 1em;
+}
